@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "./components/postsHome.vue";
-import Create from "./components/posts/components/Create.vue";
-import Post from "./components/posts/components/Post.vue";
+import Create from "./components/posts/views/Create.vue";
+import Post from "./components/posts/views/Post.vue";
 
 Vue.use(VueRouter);
 
