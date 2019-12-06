@@ -7,7 +7,23 @@ const toDoController = {
 
       return res.json({
         status: 200,
-        posts: posts
+        posts
+      });
+    } catch (error) {
+      return error;
+    }
+  },
+
+  async showId(req, res) {
+    try {
+      const { _id } = req.body;
+
+      const post = await model.findById({ _id: _id });
+
+      return res.json({
+        post,
+        message: "Post unico pego",
+        status: 200
       });
     } catch (error) {
       return error;
@@ -55,9 +71,9 @@ const toDoController = {
 
   async delete(req, res) {
     try {
-      const { id } = req.body;
+      const { _id } = req.body;
 
-      await model.findByIdAndDelete({ _id: id });
+      await model.findOneAndDelete({ _id: _id });
 
       res.json({
         message: "Deletado com sucesso",
