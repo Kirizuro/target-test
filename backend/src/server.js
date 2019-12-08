@@ -1,13 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const router = require("./Routes");
 
 const app = express();
 
 mongoose.connect(
-  "mongodb+srv://omnistack:omnistack@cluster0-5mfoa.mongodb.net/omnistack8?retryWrites=true&w=majority",
+  `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0-5mfoa.mongodb.net/${process.env.MONGODB_COLLECTION}?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
