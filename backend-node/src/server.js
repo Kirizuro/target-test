@@ -10,7 +10,7 @@ const router = require("./Routes");
 const app = express();
 
 mongoose.connect(
-  `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0-5mfoa.mongodb.net/${process.env.MONGODB_COLLECTION}?retryWrites=true&w=majority`,
+  `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0-5mfoa.mongodb.net/${process.env.MONGODB_COLLECTION}`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
