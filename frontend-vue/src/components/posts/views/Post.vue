@@ -41,9 +41,7 @@ export default {
 
     async getPost() {
       try {
-        const result = await api.post(`/showId`, {
-          _id: this.postId()
-        });
+        const result = await api.post(`/${this.postId()}`);
 
         this.post = await result.data.post;
       } catch (error) {
@@ -53,7 +51,7 @@ export default {
 
     async updatePost() {
       try {
-        await api.put(`/update`, {
+        await api.put(`/${this.postId()}`, {
           _id: this.postId(),
           title: this.post.title,
           description: this.post.description

@@ -46,7 +46,7 @@ export default {
     },
     async deletePost(id) {
       try {
-        await api.delete(`/delete`, {
+        await api.delete(`/${id}`, {
           data: {
             _id: id
           }
