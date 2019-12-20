@@ -1,9 +1,17 @@
 # Test to Target Job Application
 
+## Frontend (Angular 8)
+
+```bash
+cd frontend-angular
+npm install
+ng serve
+```
+
 ## Frontend (Vuejs)
 
 ```bash
-cd frontend
+cd frontend-vue
 yarn
 yarn serve
 ```
